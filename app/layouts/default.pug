@@ -1,0 +1,54 @@
+include ../includes/mixins
+include ../includes/meta
+
+doctype html
+html.no-js(lang='ru')
+  head
+    meta(charset='utf-8')
+    meta(name='description', content=desc)
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    title= title
+    +favicon
+    // Place favicon.ico in the root directory
+    // build:css styles/vendor.css
+    // bower:css
+    // endbower
+    // endbuild
+    // build:css styles/main.css
+    link(rel='stylesheet', href='styles/main.css')
+    // endbuild
+    // build:js scripts/vendor/modernizr.js
+    script(src='/bower_components/modernizr/modernizr.js')
+    // endbuild
+  body
+    //if IE
+      p.browserupgrade
+        | You are using an 
+        strong outdated
+        |  browser. Please 
+        a(href='http://browsehappy.com/') upgrade your browser
+        |  to improve your experience.
+    main.main-content
+      .container
+        block content
+    +ga
+    // build:js scripts/vendor.js
+    // bower:js
+    // endbower
+    // endbuild
+    // build:js scripts/plugins.js
+    script(src='/bower_components/bootstrap/js/dist/util.js')
+    script(src='/bower_components/bootstrap/js/dist/alert.js')
+    script(src='/bower_components/bootstrap/js/dist/button.js')
+    script(src='/bower_components/bootstrap/js/dist/carousel.js')
+    script(src='/bower_components/bootstrap/js/dist/collapse.js')
+    script(src='/bower_components/bootstrap/js/dist/dropdown.js')
+    script(src='/bower_components/bootstrap/js/dist/modal.js')
+    script(src='/bower_components/bootstrap/js/dist/scrollspy.js')
+    script(src='/bower_components/bootstrap/js/dist/tab.js')
+    script(src='/bower_components/bootstrap/js/dist/tooltip.js')
+    script(src='/bower_components/bootstrap/js/dist/popover.js')
+    // endbuild
+    // build:js scripts/main.js
+    script(src='scripts/main.js')
+    // endbuild

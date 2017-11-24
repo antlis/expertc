@@ -1,7 +1,26 @@
-- var desc = 'default desctiption located in meta.pug';
-- var title = 'default title located in meta.pug';
+- var desc = 'Получайте по 30 заявок в неделю на клининговые услуги и зарабатывайте от 300 000 руб/мес';
+- var title = 'Эксперт Клининг';
 
-// https://www.favicon-generator.org/
+mixin social
+    meta(name='keywords', content='')
+    meta(name='image', content='https://expertcleaning.ru/images/expertcleaning_social.png')
+    meta(name='original-source', content='https://expertcleaning.ru')
+    link(rel='canonical', href='https://expertcleaning.ru')
+    meta(property='og:locale', content='ru_RU')
+    meta(property='og:type', content='website')
+    meta(property='og:title', content='Эксперт Клининг')
+    meta(property='og:description', content='')
+    meta(property='og:url', content='https://expertcleaning.ru')
+    meta(property='og:site_name', content='Эксперт Клининг')
+    meta(property='og:image', content='https://expertcleaning.ru/images/expertcleaning.ru_social.png')
+    meta(property='og:image:secure_url', content='https://expertcleaning.ru/images/expertcleaning.ru_social.png')
+    meta(name='twitter:title', content='Эксперт Клининг')
+    meta(name='twitter:image', content='https://expertcleaning.ru/images/expertcleaning.ru.png')
+    meta(name='twitter:description', content='Получайте по 30 заявок в неделю на клининговые услуги и зарабатывайте от 300 000 руб/мес')
+    meta(name='twitter:card', content='summary_large_image')
+    meta(name='twitter:site', content='@ЭкспертКлининг')
+
+//- https://www.favicon-generator.org/
 mixin favicon
     link(rel='apple-touch-icon', sizes='57x57', href='/apple-icon-57x57.png')
     link(rel='apple-touch-icon', sizes='60x60', href='/apple-icon-60x60.png')

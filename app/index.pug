@@ -1,2 +1,33 @@
 extends layouts/default
 block content
+  .container
+    .row
+      .col-12
+        p.text-center.heading-info
+          | Получайте <strong class="text-highlight">по 30 заявок в неделю</strong> на клининговые услуги
+          | и зарабатывайте <strong class="text-highlight">от 300 000 руб/мес</strong> с франшизой <span>“Эксперт Клининг”</span>
+        p.text-center.heading-sub-info
+          span ПРОДВИЖЕНИЕ
+          span ТЕНДЕРНЫЙ ОТДЕЛ
+          span КНИГА ПРОДАЖ
+    .row.video-content
+      .col-md-6
+        .embed-responsive.embed-responsive-16by9
+          iframe.embed-responsive-item(src='https://www.youtube.com/embed/zpOULjyy-n8?rel=0', allowfullscreen='')
+      .col-md-6
+        .main-content-text
+          h3.main-content-title Получите<br /> бесплатно!
+          p.main-content-info
+            | Подробный бизнес-план, финансовую модель и другие
+            | полезные файлы по запуску клининговой компании
+            | в любом городе России и СНГ в 2017-2018 году
+          p
+            button.btn.btn-custom(type="button", data-toggle="modal", data-target="#Modal1") Скачать
+    .features
+      +feature('3%', 'роялти')
+      +feature('до 6 мес', 'окупаемость')
+      +feature('1 город', '1 франшиза')
+      +feature('8 месяцев', 'обучающий центр')
+      +feature('более 60', 'файлов по клинингу')
+      
+

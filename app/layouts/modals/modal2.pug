@@ -1,0 +1,25 @@
+#Modal2.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+  .container
+      .modal-dialog.modal-lg(role='document')
+        .modal-content
+          .modal-header
+            h5#exampleModalLabel.modal-title Спасибо, что заинтересовались нашим <strong>предложением по франшизе!</strong>  Файлы придут вам на почту <span class="text-underline">в течение 3-х минут</span>
+            p А пока вы можете посмотреть видео, где собственник рассказывает о том, как <strong>бесплатно</strong> в своем городе, можно <strong>проверить нашу франшизу</strong>
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              | Закрыть&nbsp;
+              span(aria-hidden='true') ×
+          .modal-body
+            | БЕСПЛАТНЫЙ ТЕСТ-ДРАЙВ франшизы “Эксперт Клининг” в Вашем городе
+            | ЛЕГКИЙ СПОСОБ ПРОВЕРИТЬ АКТУАЛЬНОСТЬ ФРАНШИЗЫ БЕЗ ЛИШНИХ ЗАТРАТ
+            .embed-responsive.embed-responsive-16by9
+                iframe.embed-responsive-item(src='https://www.youtube.com/embed/zpOULjyy-n8?rel=0', allowfullscreen='')
+            | Запишитесь на тест-драйв франшизы
+          .modal-footer
+            form.form-inline
+              label.sr-only(for='inlineFormInputName2') Name
+              input#inlineFormInputName2.form-control.mb-2.mr-sm-2.mb-sm-0(type='text', placeholder='Jane Doe')
+              label.sr-only(for='inlineFormInputGroupUsername2') Username
+              .input-group.mb-2.mr-sm-2.mb-sm-0
+                .input-group-addon @
+                input#inlineFormInputGroupUsername2.form-control(type='text', placeholder='Username')
+              button.btn.btn-primary(type='submit') Submit

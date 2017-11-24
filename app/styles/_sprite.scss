@@ -1,0 +1,91 @@
+.bg-clearning_grill {
+    width: 401px; height: 517px;
+    background: url('../images/sprites.png') -10px -10px;
+}
+
+.bg-telegram {
+    // width: 16px; height: 15px;
+    background: url('../images/sprites.png') -503px -161px;
+}
+
+.bg-sup {
+    // width: 16px; height: 16px;
+    background: url('../images/sprites.png') -431px -161px;
+}
+
+.bg-viber {
+    // width: 16px; height: 16px;
+    background: url('../images/sprites.png') -467px -161px;
+}
+
+.bg-telegram_y {
+    width: 19px; height: 17px;
+    background: url('../images/sprites.png') -509px -122px;
+}
+
+.bg-sup_y {
+    width: 19px; height: 19px;
+    background: url('../images/sprites.png') -431px -122px;
+}
+
+.bg-viber_y {
+    width: 19px; height: 19px;
+    background: url('../images/sprites.png') -470px -122px;
+}
+
+.bg-computer {
+    width: 102px; height: 92px;
+    background: url('../images/sprites.png') -431px -10px;
+}
+
+.icon {
+    display: inline-block;
+    background-position: center center;
+}
+
+.main-header .icon {
+    width: 16px;
+    height: 16px;
+    margin-bottom: -4px;
+}
+
+.main-header .contact-links {
+    margin-bottom: 10px;
+    a {
+        display: inline-block;
+        margin-left: 15px;
+        @include setLinkStyleAll {
+            color: #201e34;
+        }
+    }
+}
+
+.main-footer .icon {
+    width: 19px;
+    height: 19px;
+    margin-bottom: -5px;
+}
+
+.main-header {
+    .contact-link-telegram {
+       @extend .bg-telegram; 
+    }
+    .contact-link-whatsapp {
+        @extend .bg-sup;
+    }
+    .contact-link-viber {
+        @extend .bg-viber;
+    }
+}
+
+.main-footer {
+    .contact-link-telegram {
+       @extend .bg-telegram_y; 
+    }
+    .contact-link-whatsapp {
+        @extend .bg-sup_y;
+    }
+    .contact-link-viber {
+        @extend .bg-viber_y;
+    }
+}

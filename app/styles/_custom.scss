@@ -43,10 +43,21 @@
 // Close
 // Code
 
+//
+// Custom variables
+$footer-bg: #201e34;
+//
 
 //
 // Color system
 //
+
+//
+// Custom colors
+//
+$dark-blue: #201e34;
+$bright-yellow: #fde876;
+$bright-blue: #00cad1;
 
 $white:  #fff !default;
 $gray-100: #f8f9fa !default;
@@ -201,7 +212,7 @@ $container-max-widths: (
 //
 // Set the number of columns and specify the width of the gutters.
 
-$grid-columns: 12 !default;
+$grid-columns: 24;
 $grid-gutter-width: 30px !default;
 
 // Components

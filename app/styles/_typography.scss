@@ -1,0 +1,104 @@
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/ZLqKeelYbATG60EpZBSDyxJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/oHi30kwQWvpCWqAhzHcCSBJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/oOeFwZNlrTefzLYmlVV1UBJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Amazing Grotesk Ultra';
+  src: url("../fonts/Amazing Grotesk Ultra.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Amazing Grotesk Demi';
+  src: url("../fonts/Amazing Grotesk Demi.otf") format("opentype");
+}
+
+%roboto-medium {
+  font-family: 'Roboto Medium', serif;
+}
+
+%amazing-grotesk-ultra {
+  font-family: "Amazing Grotesk Ultra", serif;
+}
+
+%amazing-grotesk-demi {
+  font-family: 'Amazing Grotesk Demi', serif;
+}
+
+body {
+  @extend %roboto-medium;
+}
+
+.feature-title,
+.main-header-phone,
+.main-footer .phone,
+.main-content-title {
+  @extend %amazing-grotesk-ultra;
+}
+
+
+.btn.btn-custom {
+  @extend %amazing-grotesk-demi;
+}
+
+.main-content-title {
+  font-size: 30px;
+}
+
+.btn-order-call {
+    @extend %amazing-grotesk-demi;
+    font-size: 16px;
+}
+
+.heading-info {
+    @extend %amazing-grotesk-demi;
+    font-size: 30px;
+    strong, span {
+        @extend %amazing-grotesk-ultra;
+    }
+    strong {
+        text-transform: uppercase;
+    }
+}
+
+.modal-header {
+  @extend %amazing-grotesk-demi;
+  h5 {
+    font-size: 30px;
+  }
+  strong {
+    @extend %amazing-grotesk-ultra;
+    text-transform: uppercase;
+  }
+  p {
+    font-size: 18px;
+  }
+}

@@ -8,6 +8,7 @@ html.no-js(lang='ru')
     meta(name='description', content=desc)
     meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
     title= title
+    +social
     +favicon
     // Place favicon.ico in the root directory
     // build:css styles/vendor.css
@@ -21,35 +22,41 @@ html.no-js(lang='ru')
     script(src='/bower_components/modernizr/modernizr.js')
     // endbuild
   body
-    //if IE
+    //if lt IE 9
       p.browserupgrade
-        | You are using an 
-        strong outdated
-        |  browser. Please 
-        a(href='http://browsehappy.com/') upgrade your browser
-        |  to improve your experience.
-    header.main-header
-    main.main-content
-      .container
-        block content
-    footer.main-footer
+        Вы используете <strong>устаревший</strong> браузер.
+        Пожалуйста <a href="http://browsehappy.com/">обновите ваш браузер</a>
+        для полноценного взаимодействия с сайтом.
+    
+    .main-wrap
+      include ../includes/header
+      
+      main.main-content
+          block content
+      
+      include ../includes/footer
+      
+      include modals/modal1
+      include modals/modal2
     +ga
     // build:js scripts/vendor.js
+    script(src='/bower_components/modernizr/modernizr.js')
+    script(src='/bower_components/jquery/dist/jquery.js')
     // bower:js
     // endbower
     // endbuild
     // build:js scripts/plugins.js
     script(src='/bower_components/bootstrap/js/dist/util.js')
-    script(src='/bower_components/bootstrap/js/dist/alert.js')
+    // script(src='/bower_components/bootstrap/js/dist/alert.js')
     script(src='/bower_components/bootstrap/js/dist/button.js')
-    script(src='/bower_components/bootstrap/js/dist/carousel.js')
-    script(src='/bower_components/bootstrap/js/dist/collapse.js')
-    script(src='/bower_components/bootstrap/js/dist/dropdown.js')
+    // script(src='/bower_components/bootstrap/js/dist/carousel.js')
+    // script(src='/bower_components/bootstrap/js/dist/collapse.js')
+    // script(src='/bower_components/bootstrap/js/dist/dropdown.js')
     script(src='/bower_components/bootstrap/js/dist/modal.js')
-    script(src='/bower_components/bootstrap/js/dist/scrollspy.js')
-    script(src='/bower_components/bootstrap/js/dist/tab.js')
-    script(src='/bower_components/bootstrap/js/dist/tooltip.js')
-    script(src='/bower_components/bootstrap/js/dist/popover.js')
+    // script(src='/bower_components/bootstrap/js/dist/scrollspy.js')
+    // script(src='/bower_components/bootstrap/js/dist/tab.js')
+    // script(src='/bower_components/bootstrap/js/dist/tooltip.js')
+    // script(src='/bower_components/bootstrap/js/dist/popover.js')
     // endbuild
     // build:js scripts/main.js
     script(src='scripts/main.js')

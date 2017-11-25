@@ -139,6 +139,8 @@ body {
 
 .main-content {
   flex: 1;
+  position: relative;
+  z-index: 101;
 }
 
 .main-content-text {
@@ -206,6 +208,8 @@ body {
   color: $white;
   font-size: 14px;
   margin-top: 40px;
+  position: relative;
+  z-index: 10;
   a {
     @include setLinkStyleAll {
       color: $white;
@@ -244,7 +248,7 @@ body {
   }
   .container {
     position: relative;
-    &:before {
+    .main-footer-top:before {
       content: " ";
       position: absolute;
       z-index: 100;
@@ -257,6 +261,11 @@ body {
       }
     }
   }
+}
+
+.main-content-inner {
+  position: relative;
+  
 }
 
 // Modal

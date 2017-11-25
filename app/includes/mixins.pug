@@ -6,5 +6,18 @@ mixin contactLinks
         
 mixin feature(title, desc)
     section.feature
-        header.feature-title= title
+        header
+            h4.feature-title= title
         .feature-description= desc
+        
+mixin headingSubSpan
+    p.text-center.heading-sub-info
+      span ПРОДВИЖЕНИЕ
+      span ТЕНДЕРНЫЙ ОТДЕЛ
+      span КНИГА ПРОДАЖ
+      
+mixin headingSubAnchor
+    p.text-center.heading-sub-info
+      a(href="#0") ПРОДВИЖЕНИЕ
+      a(href="#0") ТЕНДЕРНЫЙ ОТДЕЛ
+      a(href="#0") КНИГА ПРОДАЖ

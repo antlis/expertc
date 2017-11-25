@@ -49,3 +49,9 @@ mixin ga
       e.src='https://www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
+      
+mixin jsonLD
+    script(type='application/ld+json').
+      {"@context": "http://schema.org", "@type": "WebSite", "url": "", "name": "Эксперт Клининг", "author":{"@type": "Person", "name": ""}, "description": "Получайте по 30 заявок в неделю на клининговые услуги и зарабатывайте от 300 000 руб/мес", "publisher": ""}
+    script(type='application/ld+json').
+      {"@context": "http://schema.org", "@type": "Organization", "url": "", "sameAs": [ "https://www.facebook.com//", "https://www.instagram.com//", "https://twitter.com/"], "@id": "#organization", "name": "Эксперт Клининг", "logo": ""}

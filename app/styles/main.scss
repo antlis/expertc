@@ -44,8 +44,9 @@
 @import "sprite";
 
 body {
-  background: url(../images/main_bg.png) no-repeat top center;
   background-size: cover;
+  background-color: transparent;
+  background-attachment: fixed;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -53,13 +54,25 @@ body {
 
 .main-wrap {
   overflow: hidden;
+  background: url(../images/main_bg_c.jpg) no-repeat top center;
+  background-attachment: fixed;
+  z-index: 10;
 }
 
 .btn-order-call {
   border-radius: 30px;
-  padding: 10px 15px;
+  padding: 5px 15px;
   border: 2px solid $bright-blue;
   background: transparent;
+  cursor: pointer;
+  color: $black;
+  &:hover {
+    background: $bright-blue;
+    color: $white;
+  }
+}
+
+.btn {
   cursor: pointer;
 }
 
@@ -91,6 +104,7 @@ body {
 
 .heading-info {
   color: $dark-blue;
+  line-height: 1.6;
   strong {
     padding: 0 7px;
   }
@@ -137,8 +151,9 @@ body {
 }
 
 .heading-sub-info {
+  margin-top: 20px;
   margin-bottom: 60px;
-  span {
+  span, a {
     padding: 0 7px;
     text-transform: uppercase;
     display: inline-block;
@@ -146,6 +161,15 @@ body {
     line-height: 1;
     &:first-child {
       border-left-color: transparent;
+    }
+  }
+  a {
+    @include setLinkStyleAll {
+      color: $dark-blue;
+      text-decoration: none;
+    }
+    &:hover {
+      color: $bright-blue;
     }
   }
 }
@@ -202,6 +226,7 @@ body {
   }
   .message-us p {
     display: inline-block;
+    margin-bottom: 0;
   }
   .phone {
     font-size: 30px;
@@ -211,7 +236,10 @@ body {
     a { 
       text-decoration: none;
       display: inline-block;
-      margin-right: 15px;
+      margin-left: 15px;
+      &:hover {
+        color: $bright-yellow;
+      }
     }
   }
   .container {
@@ -219,8 +247,9 @@ body {
     &:before {
       content: " ";
       position: absolute;
+      z-index: 100;
       @extend .bg-clearning_grill;
-      top: -517px;
+      top: -497px;
       right: -70px;
       z-index: -1;
       @include media-breakpoint-down(lg) {
@@ -230,6 +259,186 @@ body {
   }
 }
 
+// Modal
+.text-underline {
+  border-bottom: 2px solid $bright-yellow;
+}
+
+.modal {
+  background: rgba(32,30,52,.75);
+  padding-right: 15px;
+}
+
+.modal-2 .modal-body {
+  text-align: center;
+}
+
+.modal-content {
+  background: transparent;
+  border: 0;
+}
+
+.modal-body, .modal-footer {
+  background: $white;
+}
+
+.modal-header {
+  flex-direction: column;
+  color: $white;
+  text-align: center;
+  position: relative;
+  padding: 0;
+  p {
+    margin-bottom: 50px;
+  }
+  strong {
+    color: $bright-yellow;
+  }
+  .close {
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    color: $bright-yellow;
+    font-size: 16px;
+    opacity: 1;
+    cursor: pointer;
+    border: none;
+    line-height: .5;
+    background: none;
+    outline: none;
+    padding: 0;
+    span.close-text {
+      &:hover {
+        border-bottom: 1px solid $bright-yellow;
+      }
+    }
+    span.close-cross {
+      vertical-align: middle;
+      font-size: 30px;
+    }
+  }
+}
+
+.modal-title {
+  margin-bottom: 25px;
+}
+
+.modal-video {
+  margin-top: 40px;
+}
+
+.modal-footer {
+  border-top-color: transparent;
+  display: block;
+}
+
+.modal-body-title .text-highlight {
+  padding: 5px 7px;
+  display: inline-block;
+}
+
+.modal-body-title {
+  margin: 30px 0;
+}
+
+.modal-footer form {
+  padding: 0 7%;
+  margin-bottom: 25px;
+  button[type="submit"] {
+    width: 100%;
+  }
+  input {
+    text-align: center;
+    background: #ebebeb;
+    border: 0;
+    border-radius: 30px;
+    height: 100%;
+    margin-right: 0 !important;
+  }
+}
+
+.modal-footer-title {
+  margin-bottom: 30px;
+}
+
+.modal-col-bg {
+  background: url(../images/modal_col_bg.jpg) no-repeat;
+  background-size: cover;
+  margin-top: -16px;
+  margin-bottom: -16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $white;
+  p {
+    margin-bottom: 30px;
+  }
+  input {
+    display: block;
+    margin: auto auto 7px auto;
+    text-align: center;
+    border-radius: 30px;
+    border: 0;
+    padding: 10px 10px;
+  }
+  button, input {
+    width: 80%;
+  }
+}
+
+.modal-col-bg-title {
+  margin: 0;
+  padding: 30px 0;
+}
+
+.modal-list-title {
+  text-align: center;
+  margin: 15px 0 30px 0;
+}
+
+.modal-list {
+  list-style: none;
+  counter-reset: item;
+  margin-bottom: 15px;
+  > li {
+    counter-increment: item;
+    &, ul {
+      margin-top: 25px;
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+    &:before {
+      content: counter(item)'.';
+      position: relative;
+      left: -20px;
+      color: $bright-blue;
+    }
+    ul {
+      list-style: none;
+      li {
+        position: relative;
+      }
+      li:before {
+        content: " ";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $bright-blue;
+        top: 50%;
+        margin-top: -3px;
+        left: -28px;
+      }
+    }
+  }
+}
+// Modal
+
+// Media
 @include media-breakpoint-down(lg) {
   .col-logo {
     text-align: center;
@@ -254,11 +463,30 @@ body {
   .main-footer-logo {
     margin: 30px 0;
   }
+  .modal-footer form {
+    padding: 0 20%;
+    .col-lg-6 {
+      margin-top: 7px;
+    }
+    input {
+      width: 100%;
+      padding: 10px 50px;
+    }
+  }
+  .modal-list {
+    margin-bottom: 50px;
+  }
+  .modal-col-bg {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-position: center center;
+  }
 }
 
 @include media-breakpoint-down(md) {
   .video-content {
     flex-direction: column-reverse;
+    align-items: center;
   }
   .main-content-text {
     text-align: center;
@@ -280,54 +508,36 @@ body {
       border-bottom: 2px dotted $black;
     }
   }
-}
-
-// Modal
-.text-underline {
-  border-bottom: 2px solid $bright-yellow;
-}
-
-.modal {
-  background: rgba(32,30,52,.75);
-}
-
-.modal-content {
-  background: transparent;
-  border-color: transparent;
-}
-
-.modal-body, .modal-footer {
-  background: $white;
-}
-
-.modal-header {
-  flex-direction: column;
-  color: $white;
-  text-align: center;
-  position: relative;
-  p {
-    margin: 25px 0 50px 0;
+  .modal-title {
+    margin-bottom: 45px;
   }
-  strong {
-    color: $bright-yellow;
+}
+
+@include media-breakpoint-down(sm) {
+  .modal-footer form {
+    padding-right: 0;
+    padding-left: 0;
   }
-  .close {
-    position: absolute;
-    bottom: 15px;
-    right: 0;
-    color: $bright-yellow;
-    font-size: 16px;
-    opacity: 1;
-    cursor: pointer;
-    border-bottom: 1px solid transparent;
-    line-height: .7;
-    &:hover {
-      border-bottom: 1px solid $bright-yellow;
+  .feature {
+    width: 60%;
+  }
+  .heading-info {
+    font-size: 24px;
+  }
+  .heading-sub-info {
+    margin-top: 40px;
+    a {
+      display: block;
+      margin-top: 15px;
+      padding-bottom: 15px;
+      border-left: 0;
+      border-bottom: 2px solid $dark-blue;
     }
-    span {
-      vertical-align: middle;
-      position: relative;
-      top: -2px;
+  }
+  .modal-list {
+    padding-left: 20px;
+    ul {
+      padding-left: 25px;
     }
   }
 }

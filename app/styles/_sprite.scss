@@ -89,3 +89,16 @@
         @extend .bg-viber_y;
     }
 }
+
+.modal-col-bg-inner {
+    position: relative;
+    padding-top: 92px;
+    &:before {
+        content: " ";
+        position: absolute;
+        @extend .bg-computer;
+        top: 0;
+        right: 50%;
+        margin-right: -51px;
+    }
+}

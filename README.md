@@ -10,6 +10,6 @@ Favicon Generator - https://www.favicon-generator.org/
 
 4) gulp serve
 
-Demo - https://antlis.bitbucket.io/portfolio/expertcleaning/
+[Demo](https://antlis.bitbucket.io/portfolio/expertcleaning/)
 
 ![ExpertCleaning Screenshot](./screenshot.png)

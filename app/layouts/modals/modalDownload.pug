@@ -1,4 +1,4 @@
-#Modal1.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLongTitle', aria-hidden='true')
+#ModalDownload.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLongTitle', aria-hidden='true')
   .container
       .modal-dialog(role='document')
         .modal-content
@@ -39,9 +39,33 @@
                     .modal-col-bg-inner
                         h6.modal-col-bg-title Заполните форму
                         p и получите <strong>5 файлов</strong><br /> в течение <strong>3-х минут</strong>
-                        form
-                          label.sr-only(for='modal2FormName') Ваше имя
-                          input#modal2FormName.form-control(type='text', placeholder='Ваше Имя')
-                          label.sr-only(for='modal2FormPhone') Ваш телефон
-                          input#modal2FormPhone.form-control(type='tel', placeholder='+7 (___) ___-__-__')
-                          button.btn.btn-custom(type="button") <i class="icon icon-download-cloud"></i> Скачать
+                        
+                        form#modalDownloadForm(method='post', action='')
+                            label.sr-only(for='modalDownloadName') Ваше имя
+                            input#modalDownloadName.form-control(type='text',
+                            placeholder='Ваше Имя',
+                            value='',
+                            name='modal-download-name',
+                            required,
+                            aria-required='true')
+                            
+                            label.sr-only(for='modalDownloadPhone') Ваш телефон
+                            input#modalDownloadPhone.form-control(type='tel',
+                            placeholder='+7 (___) ___-__-__',
+                            value='',
+                            name='modal-download-phone',
+                            required,
+                            aria-required='true')
+                            
+                            button.btn.btn-custom.btn-modal-download(type="submit")
+                                | <i class="icon icon-download-cloud"></i> Скачать
+                            
+                            .from-check.form-check-inline.modal1-confirm
+                                label.form-check-label
+                                    input#modalDownloadAgree.form-check-input(type='checkbox',
+                                    required,
+                                    aria-required='true',
+                                    value='',
+                                    name='modal-download-agree')
+                                    | &nbsp; Я даю разрешение на обработку моих персональных данных,
+                                    | согласно политике конфиденциальности

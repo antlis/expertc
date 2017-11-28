@@ -4,6 +4,7 @@
   "dependencies": {
     "bootstrap": "v4.0.0-beta",
     "modernizr": "~2.8.1",
-    "jquery.maskedinput": "^1.4.1"
+    "jquery.maskedinput": "^1.4.1",
+    "jquery-validation": "^1.17.0"
   }
 }

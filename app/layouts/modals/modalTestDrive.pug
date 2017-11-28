@@ -1,0 +1,73 @@
+#ModalTestDrive.modal.modal-2.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+  .container
+      .modal-dialog.modal-lg(role='document')
+        .modal-content
+          .modal-thanks
+            span.thanks-close <i class="icon icon-cancel"></i>
+            h5.modal-title Спасибо!
+            p что заинтересовались нашим <strong>предложением по франшизе!</strong>
+            p Файлы придут вам на почту в течение 3-х минут
+            p А пока вы можете посмотреть видео,
+              | где собственник рассказывает о том,
+              | как <strong>бесплатно</strong> в своем городе,
+              | можно <strong>проверить нашу франшизу</strong>
+            button.btn.btn-custom.btn-video(type='button') Посмотреть видео
+          .modal-blurred
+            .modal-header
+              // h5#exampleModalLabel.modal-title
+              //   | Спасибо, что заинтересовались нашим <strong>предложением по франшизе!</strong>
+              //   | Файлы придут вам на почту <span class="text-underline">в течение 3-х минут</span>
+              // p 
+              //   | А пока вы можете посмотреть видео, где собственник рассказывает о том, как <strong>бесплатно</strong>
+              //   | в своем городе, можно <strong>проверить нашу франшизу</strong>
+              button.close(type='button', data-dismiss='modal', aria-label='Close')
+                span.close-text Закрыть&nbsp;
+                span.close-cross(aria-hidden='true') ×
+            .modal-body
+                h6.modal-body-title
+                  | <strong class="text-highlight">БЕСПЛАТНЫЙ ТЕСТ-ДРАЙВ</strong> франшизы 
+                  | <span class="text-highlight-quotes">“Эксперт Клининг”</span> в Вашем городе
+                h6.modal-body-subtitle ЛЕГКИЙ СПОСОБ ПРОВЕРИТЬ АКТУАЛЬНОСТЬ ФРАНШИЗЫ БЕЗ ЛИШНИХ ЗАТРАТ
+                .row.justify-content-center.modal-video
+                  .col-md-12
+                    .embed-responsive.embed-responsive-16by9
+                      iframe.embed-responsive-item(src='https://www.youtube.com/embed/zpOULjyy-n8?rel=0', allowfullscreen='')
+            .modal-footer
+              h6.modal-footer-title.text-center Запишитесь на тест-драйв франшизы
+              
+              form#modalTestDriveForm(method='post', action='')
+                .row
+                  .col-lg-6
+                    label.sr-only(for='modalTestDriveCity') Ваш город
+                    input#modalTestDriveCity.form-control(type='text',
+                    placeholder='Ваш город',
+                    value='',
+                    name='modal-test-drive-city',
+                    required,
+                    aria-required='true')
+                  .col-lg-6
+                    label.sr-only(for='modalTestDriveName') Ваше имя
+                    input#modalTestDriveName.form-control(type='text',
+                    placeholder='Ваше Имя',
+                    value='',
+                    name='modal-test-drive-name',
+                    required,
+                    aria-required='true')
+                  .col-lg-6
+                    label.sr-only(for='modalTestDrivePhone') Ваш телефон
+                    input#modalTestDrivePhone.form-control(type='tel',
+                    placeholder='+7 (___) ___-__-__',
+                    value='',
+                    name='modal-test-drive-phone',
+                    required,
+                    aria-required='true')
+                  .col-lg-6
+                    button.btn.btn-custom(type='submit') Записаться
+                  .from-check.form-check-inline.modal-test-drive-confirm
+                    label.form-check-label
+                      input.form-check-input(type='checkbox',
+                      value='',
+                      name='modal-test-drive-agree',
+                      required,
+                      aria-required='true')
+                      | &nbsp; Я даю разрешение на обработку моих персональных данных, согласно политике конфиденциальности

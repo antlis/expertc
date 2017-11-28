@@ -1,52 +1,8 @@
-@import "mixins";
-@import "typography";
-
-// bower:scss
-// @import "bower_components/bootstrap/scss/bootstrap.scss";
-
-@import "bower_components/bootstrap/scss/functions";
-@import "bower_components/bootstrap/scss/variables";
-@import "custom";
-@import "bower_components/bootstrap/scss/mixins";
-@import "bower_components/bootstrap/scss/print";
-@import "bower_components/bootstrap/scss/reboot";
-@import "bower_components/bootstrap/scss/type";
-@import "bower_components/bootstrap/scss/images";
-// @import "bower_components/bootstrap/scss/code";
-@import "bower_components/bootstrap/scss/grid";
-// @import "bower_components/bootstrap/scss/tables";
-// @import "bower_components/bootstrap/scss/forms";
-@import "bower_components/bootstrap/scss/buttons";
-@import "bower_components/bootstrap/scss/transitions";
-// @import "bower_components/bootstrap/scss/dropdown";
-// @import "bower_components/bootstrap/scss/button-group";
-// @import "bower_components/bootstrap/scss/input-group";
-// @import "bower_components/bootstrap/scss/custom-forms";
-// @import "bower_components/bootstrap/scss/nav";
-// @import "bower_components/bootstrap/scss/navbar";
-// @import "bower_components/bootstrap/scss/card";
-// @import "bower_components/bootstrap/scss/breadcrumb";
-// @import "bower_components/bootstrap/scss/pagination";
-// @import "bower_components/bootstrap/scss/badge";
-// @import "bower_components/bootstrap/scss/jumbotron";
-// @import "bower_components/bootstrap/scss/alert";
-// @import "bower_components/bootstrap/scss/progress";
-@import "bower_components/bootstrap/scss/media";
-// @import "bower_components/bootstrap/scss/list-group";
-// @import "bower_components/bootstrap/scss/close";
-@import "bower_components/bootstrap/scss/modal";
-// @import "bower_components/bootstrap/scss/tooltip";
-// @import "bower_components/bootstrap/scss/popover";
-// @import "bower_components/bootstrap/scss/carousel";
-@import "bower_components/bootstrap/scss/utilities";
-// endbower
-
-@import "sprite";
+@import 'imports';
 
 body {
   background-size: cover;
   background-color: transparent;
-  background-attachment: fixed;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -55,8 +11,15 @@ body {
 .main-wrap {
   overflow: hidden;
   background: url(../images/main_bg_c.jpg) no-repeat top center;
-  background-attachment: fixed;
+  background-attachment: scroll;
+  // background-attachment: fixed;
+  background-size: cover;
   z-index: 10;
+}
+
+.btn-custom.btn-custom-red {
+  background: linear-gradient(#fd3d3d, #d41010);
+  color: $white;
 }
 
 .btn-order-call {
@@ -205,6 +168,9 @@ body {
 
 .main-footer {
   background: $footer-bg;
+}
+
+.main-footer, .modal-main-footer {
   color: $white;
   font-size: 14px;
   margin-top: 40px;
@@ -273,12 +239,20 @@ body {
 }
 
 .modal {
-  background: rgba(32,30,52,.75);
-  padding-right: 15px;
+  background: $modal-bg;
+  // padding-right: 15px;
+}
+
+.modal-body {
+  border-radius: 8px 8px 0 0;
 }
 
 .modal-2 .modal-body {
   text-align: center;
+}
+
+.modal-2 .container {
+  margin-top: 100px;
 }
 
 .modal-content {
@@ -296,12 +270,17 @@ body {
   text-align: center;
   position: relative;
   padding: 0;
+  border-radius: 8px 8px 0 0;
+  border: 0;
   p {
     margin-bottom: 50px;
   }
   strong {
     color: $bright-yellow;
   }
+}
+
+.modal {
   .close {
     position: absolute;
     bottom: 15px;
@@ -311,7 +290,7 @@ body {
     opacity: 1;
     cursor: pointer;
     border: none;
-    line-height: .5;
+    // line-height: .5;
     background: none;
     outline: none;
     padding: 0;
@@ -322,7 +301,7 @@ body {
     }
     span.close-cross {
       vertical-align: middle;
-      font-size: 30px;
+      // font-size: 30px;
     }
   }
 }
@@ -338,6 +317,7 @@ body {
 .modal-footer {
   border-top-color: transparent;
   display: block;
+  border-radius: 0 0 8px 8px;
 }
 
 .modal-body-title .text-highlight {
@@ -355,13 +335,26 @@ body {
   button[type="submit"] {
     width: 100%;
   }
-  input {
+  input[type='text'], input[type='tel'] {
     text-align: center;
     background: #ebebeb;
     border: 0;
     border-radius: 30px;
     height: 100%;
     margin-right: 0 !important;
+  }
+}
+
+input[type='text'].form-control, 
+input[type='tel'].form-control, 
+input[type='checkbox'].form-control {
+  outline: 0;
+}
+
+#modalTestDriveForm {
+  input[type='checkbox'] {
+    vertical-align: middle;
+    margin-top: -1px;
   }
 }
 
@@ -384,15 +377,16 @@ body {
   p {
     margin-bottom: 30px;
   }
-  input {
+  input[type='text'], input[type='tel'] {
     display: block;
-    margin: auto auto 7px auto;
+    margin: auto auto 10px auto;
     text-align: center;
     border-radius: 30px;
     border: 0;
     padding: 10px 10px;
+    outline: 0;
   }
-  button, input {
+  button, input[type='text'], input[type='tel'] {
     width: 80%;
   }
 }
@@ -444,6 +438,189 @@ body {
     }
   }
 }
+
+.modal-col-bg .modal1-confirm {
+  font-size: 11px;
+  @extend %roboto-medium;
+  margin: 30px auto 0 auto;
+  width: 80%;
+}
+
+.blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.modal-small {
+  .modal-header, .modal-footer {
+    padding: 0 30px;
+  }
+  .modal-dialog {
+    max-width: 400px;
+  }
+  .modal-header {
+    background: $white;
+    color: $dark-blue;
+    border-bottom: 0;
+  }
+  .modal-footer {
+    border-top: 0;
+  }
+  input {
+    width: 100%;
+  }
+  .close {
+    top: -30px;
+    bottom: auto;
+  }
+}
+
+.modal-center.modal-dialog {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+  @media(max-width: 768px) {
+    min-height: calc(100vh - 20px);
+  }
+}
+
+#Modal1 {
+  // z-index: 1040;
+}
+
+// .modal-thanks-wrap {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   left: 0;
+//   bottom: 0;
+//   background: $modal-bg;
+//   z-index: 1900;
+// }
+
+.modal-thanks {
+  max-width: 400px;
+  // min-height: 550px;
+  background: $white;
+  position: absolute;
+  left: 50%;
+  margin-left: -200px;
+  z-index: 2000;
+  @extend .text-center;
+  padding: 0 50px 23px 50px;
+  min-height: 515px;
+  top: 50%;
+  margin-top: -(515px / 2);
+  border-radius: 8px;
+  strong {
+    color: $bright-blue;
+  }
+  opacity: 1;
+  transition: opacity 0.15s linear;
+  &.not-show {
+    opacity: 0;
+  }
+}
+
+.thanks-close {
+  position: absolute;
+  right: 0;
+  background: linear-gradient(#fde36c, #ffb628);
+  border-radius: 50%;
+  padding: 5px;
+  top: -18px;
+  right: -15px;
+  transition: .3s;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.modal-blurred.blur {
+  opacity: 1;
+  transition: all 0.15s linear;
+  &:after {
+    content: " ";
+    position: absolute;
+    left: 0; right: 0;
+    bottom: 0; top: 0;
+    z-index: 1900px;
+    background: $modal-bg;
+  }
+  &.not-show {
+    opacity: 0;
+  }
+}
+
+.modal-open {
+  .main-wrap {
+    @extend .blur;
+  }
+}
+
+.modal-order-call {
+  .moadl-body {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+}
+
+.modal-order-call, .modal-thanks {
+  input {
+    padding: 10px;
+    margin-bottom: 10px !important;
+  }
+  .modal-title {
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+  form {
+    margin-bottom: 30px;
+  }
+  p {
+    margin: 30px 0;
+  }
+}
+
+.modal-test-drive-confirm {
+  @extend .text-center;
+  // margin-bottom: 15px;
+  margin-top: 45px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#modalTestDriveForm {
+  input[type='text'], input[type='tel'] {
+    width: 100%;
+  }
+}
+
+.form-check-inline input[type='checkbox'] {
+  vertical-align: middle;
+  margin-top: -1px;
+}
+
+.form-control.error, .form-check-input.error {
+  box-shadow: 0 0 2px 2px red;
+}
+
+// .form-control.valid, .form-check-input.valid {
+//   box-shadow: 0 0 2px 2px green;
+// }
+
+label.error {
+  @extend .sr-only;
+}
+
+#modalOrderCallName {
+  margin-top: 2px;
+}
 // Modal
 
 // Media
@@ -476,7 +653,7 @@ body {
     .col-lg-6 {
       margin-top: 7px;
     }
-    input {
+    input[type='text'], input[type='tel'] {
       width: 100%;
       padding: 10px 50px;
     }
@@ -493,13 +670,13 @@ body {
 
 @include media-breakpoint-down(md) {
   .video-content {
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
   }
   .main-content-text {
     text-align: center;
     padding-right: 0;
-    margin-bottom: 50px;
+    margin-top: 50px;
   }
   .features {
     flex-direction: column;
@@ -522,6 +699,19 @@ body {
 }
 
 @include media-breakpoint-down(sm) {
+  .modal-thanks {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: auto;
+    margin: auto;
+    .btn-video {
+      margin: auto;
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+    }
+  }
   .modal-footer form {
     padding-right: 0;
     padding-left: 0;

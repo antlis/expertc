@@ -36,8 +36,10 @@ html.no-js(lang='ru')
       
       include ../includes/footer
       
-    include modals/modal1
-    include modals/modal2
+    include modals/modalOrderCall
+    include modals/modalDownload
+    include modals/modalTestDrive
+    include modals/modalThanks
     +ga
     // build:js scripts/vendor.js
     script(src='/bower_components/modernizr/modernizr.js')
@@ -58,6 +60,7 @@ html.no-js(lang='ru')
     // script(src='/bower_components/bootstrap/js/dist/tooltip.js')
     // script(src='/bower_components/bootstrap/js/dist/popover.js')
     script(src='/bower_components/jquery.maskedinput/dist/jquery.maskedinput.min.js')
+    script(src='/bower_components/jquery-validation/dist/jquery.validate.min.js')
     // endbuild
     // build:js scripts/main.js
     script(src='scripts/main.js')

@@ -91,6 +91,15 @@ body {
 .main-header-phone {
   font-size: 30px;
   margin: 0;
+  a {
+    @include setLinkStyleAll {
+      color: $dark-blue;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $bright-blue;
+    }
+  }
 }
 
 .contact-links {
@@ -168,6 +177,17 @@ body {
 
 .main-footer {
   background: $footer-bg;
+  .phone {
+    a {
+      @include setLinkStyleAll {
+        color: $white;
+        text-decoration: none;
+      }
+      &:hover {
+        color: $bright-yellow;
+      }
+    }
+  }
 }
 
 .main-footer, .modal-main-footer {
@@ -489,10 +509,34 @@ input[type='checkbox'].form-control {
   }
 }
 
-#Modal1 {
-  // z-index: 1040;
+#modalDownloadForm {
+  .form-check-label {
+    a {
+      @include setLinkStyleAll {
+        text-decoration: underline;
+        color: $white;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }
 
+
+#modalTestDriveForm {
+  .form-check-label {
+    a {
+      @include setLinkStyleAll {
+        text-decoration: underline;
+        color: #212529;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
 // .modal-thanks-wrap {
 //   position: absolute;
 //   top: 0;

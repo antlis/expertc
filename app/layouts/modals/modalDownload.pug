@@ -1,9 +1,9 @@
-#ModalDownload.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLongTitle', aria-hidden='true')
+#ModalDownload.modal.fade(tabindex='-1', role='dialog', aria-labelledby='ModalDownloadTitle', aria-hidden='true')
   .container
       .modal-dialog(role='document')
         .modal-content
           .modal-header
-            h5#exampleModalLongTitle.modal-title Заполните форму и <strong>получите бесплатно 5 полезных файлов</strong> по запуску клининговой компании в 2017-2018 году
+            h5#ModalDownloadTitle.modal-title Заполните форму и <strong>получите бесплатно 5 полезных файлов</strong> по запуску клининговой компании в 2017-2018 году
             button.close(type='button', data-dismiss='modal', aria-label='Close')
               span.close-text Закрыть&nbsp;
               span.close-cross(aria-hidden='true') ×
@@ -40,7 +40,7 @@
                         h6.modal-col-bg-title Заполните форму
                         p и получите <strong>5 файлов</strong><br /> в течение <strong>3-х минут</strong>
                         
-                        form#modalDownloadForm(method='post', action='')
+                        form#modalDownloadForm(method='post', action='/')
                             label.sr-only(for='modalDownloadName') Ваше имя
                             input#modalDownloadName.form-control(type='text',
                             placeholder='Ваше Имя',
@@ -68,4 +68,4 @@
                                     value='',
                                     name='modal-download-agree')
                                     | &nbsp; Я даю разрешение на обработку моих персональных данных,
-                                    | согласно политике конфиденциальности
+                                    | согласно <a href="#">политике конфиденциальности</a>

@@ -1,10 +1,13 @@
-#ModalTestDrive.modal.modal-2.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+#ModalTestDrive.modal.modal-2.fade(tabindex='-1',
+  role='dialog',
+  aria-labelledby='ModalTestDriveThanks',
+  aria-hidden='true')
   .container
       .modal-dialog.modal-lg(role='document')
         .modal-content
           .modal-thanks
             span.thanks-close <i class="icon icon-cancel"></i>
-            h5.modal-title Спасибо!
+            h5#ModalTestDriveThanks.modal-title Спасибо!
             p что заинтересовались нашим <strong>предложением по франшизе!</strong>
             p Файлы придут вам на почту в течение 3-х минут
             p А пока вы можете посмотреть видео,
@@ -14,12 +17,6 @@
             button.btn.btn-custom.btn-video(type='button') Посмотреть видео
           .modal-blurred
             .modal-header
-              // h5#exampleModalLabel.modal-title
-              //   | Спасибо, что заинтересовались нашим <strong>предложением по франшизе!</strong>
-              //   | Файлы придут вам на почту <span class="text-underline">в течение 3-х минут</span>
-              // p 
-              //   | А пока вы можете посмотреть видео, где собственник рассказывает о том, как <strong>бесплатно</strong>
-              //   | в своем городе, можно <strong>проверить нашу франшизу</strong>
               button.close(type='button', data-dismiss='modal', aria-label='Close')
                 span.close-text Закрыть&nbsp;
                 span.close-cross(aria-hidden='true') ×
@@ -35,7 +32,7 @@
             .modal-footer
               h6.modal-footer-title.text-center Запишитесь на тест-драйв франшизы
               
-              form#modalTestDriveForm(method='post', action='')
+              form#modalTestDriveForm(method='post', action='/')
                 .row
                   .col-lg-6
                     label.sr-only(for='modalTestDriveCity') Ваш город
@@ -70,4 +67,5 @@
                       name='modal-test-drive-agree',
                       required,
                       aria-required='true')
-                      | &nbsp; Я даю разрешение на обработку моих персональных данных, согласно политике конфиденциальности
+                      | &nbsp; Я даю разрешение на обработку моих персональных данных, 
+                      | согласно <a href="#0">политике конфиденциальности</a>

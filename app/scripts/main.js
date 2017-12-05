@@ -25,7 +25,7 @@ jQuery(function($){
       $('.modal-blurred').removeClass('blur');
    });
    
-   $("#modalDownloadForm").validate({
+   $('#modalDownloadForm').validate({
       submitHandler: function(form) {
          $modalDownload.modal('hide');
          $('.modal-thanks').removeClass('not-show');
@@ -38,5 +38,20 @@ jQuery(function($){
    });
    $('#modalOrderCallForm').validate();
    $('#modalTestDriveForm').validate();
+   
+   // enhance tel-links
+   $('a[href^=\'tel:\']').each(function() {
+       var target = 'call-' + this.href.replace(/[^a-z0-9]*/gi, '');
+       var link = this;
+   
+       // load in iframe to supress potential errors when protocol is not available
+       $('body').append('<iframe name="' + target + '" style="display: none"></iframe>');
+       link.target = target;
+   
+       // replace tel with callto on desktop browsers for skype fallback
+       if (!navigator.userAgent.match(/(mobile)/gi)) {
+           link.href = link.href.replace(/^tel:/, 'callto:');
+       }
+   });
    
 });

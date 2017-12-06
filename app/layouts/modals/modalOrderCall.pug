@@ -9,12 +9,14 @@
           h5#orderCallModalLabel.modal-title Заказать звонок
           p Оставьте свои контактные данные и мы перезвоним
         .modal-footer
-          form#modalOrderCallForm(method='post', action='/')
+          form#modalOrderCallForm(method='POST', action=formEmail)
+            input.d-none(type='text' name='Форма - Заказать звонок', value='')
+            
             label.sr-only(for='modalOrderCallName') Ваше имя
             input#modalOrderCallName.form-control.mb-2.mr-sm-2.mb-sm-0(type='text',
             placeholder='Ваше Имя',
             value='',
-            name='modal-order-call-name',
+            name='Имя',
             required,
             aria-required='true')
             
@@ -22,7 +24,7 @@
             input#modalOrderCallPhone.form-control.mb-2.mr-sm-2.mb-sm-0(type='tel',
             placeholder='+7 (___) ___-__-__',
             value='',
-            name='modal-order-call-phone',
+            name='Телефон',
             required,
             aria-required='true')
             

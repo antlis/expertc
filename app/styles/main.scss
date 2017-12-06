@@ -12,7 +12,6 @@ body {
   overflow: hidden;
   background: url(../images/main_bg_c.jpg) no-repeat top center;
   background-attachment: scroll;
-  // background-attachment: fixed;
   background-size: cover;
   z-index: 10;
 }
@@ -41,7 +40,8 @@ body {
 
 .btn-custom {
   background: linear-gradient(#fde46d, #ffb121);
-  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3),
+  0 1px 2px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
   color: $dark-blue;
   padding: 10px 50px;
@@ -104,9 +104,6 @@ body {
 
 .contact-links {
   font-size: 12px;
-  a {
-    // padding-left: 20px;
-  }
 }
 
 .main-content {
@@ -300,6 +297,10 @@ body {
   }
 }
 
+.modal-body .modal-title strong {
+  color: $bright-yellow;
+}
+
 .modal {
   .close {
     position: absolute;
@@ -355,7 +356,9 @@ body {
   button[type="submit"] {
     width: 100%;
   }
-  input[type='text'], input[type='tel'] {
+  input[type='text'],
+  input[type='tel'],
+  input[type='email'] {
     text-align: center;
     background: #ebebeb;
     border: 0;
@@ -367,7 +370,8 @@ body {
 
 input[type='text'].form-control, 
 input[type='tel'].form-control, 
-input[type='checkbox'].form-control {
+input[type='checkbox'].form-control,
+input[type='email'] {
   outline: 0;
 }
 
@@ -397,7 +401,9 @@ input[type='checkbox'].form-control {
   p {
     margin-bottom: 30px;
   }
-  input[type='text'], input[type='tel'] {
+  input[type='text'],
+  input[type='tel'],
+  input[type='email'] {
     display: block;
     margin: auto auto 10px auto;
     text-align: center;
@@ -406,7 +412,10 @@ input[type='checkbox'].form-control {
     padding: 10px 10px;
     outline: 0;
   }
-  button, input[type='text'], input[type='tel'] {
+  button,
+  input[type='text'],
+  input[type='tel'],
+  input[type='email'] {
     width: 80%;
   }
 }
@@ -509,6 +518,23 @@ input[type='checkbox'].form-control {
   }
 }
 
+#ModalDownload {
+  .modal-content {
+    margin-top: 50px;
+  }
+}
+
+#ModalDownloadTitle {
+  font-size: 30px !important;
+  @extend %amazing-grotesk-demi;
+  padding: 0 20px;
+  margin-top: 25px;
+  strong {
+    background: $dark-blue;
+    padding: 0 10px;
+  }
+}
+
 #modalDownloadForm {
   .form-check-label {
     a {
@@ -523,7 +549,6 @@ input[type='checkbox'].form-control {
   }
 }
 
-
 #modalTestDriveForm {
   .form-check-label {
     a {
@@ -537,32 +562,37 @@ input[type='checkbox'].form-control {
     }
   }
 }
-// .modal-thanks-wrap {
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   left: 0;
-//   bottom: 0;
-//   background: $modal-bg;
-//   z-index: 1900;
-// }
+
+#ModalThanksApplication, #ModalThanksOrderCall {
+  .modal-header {
+    border-radius: 8px;
+    padding: 35px 15px;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .modal-title {
+    @extend %amazing-grotesk-ultra;
+    font-size: 21px;
+  }
+}
 
 .modal-thanks {
-  max-width: 400px;
-  // min-height: 550px;
+  max-width: 660px;
   background: $white;
   position: absolute;
   left: 50%;
-  margin-left: -200px;
+  margin-left: -330px;
   z-index: 2000;
   @extend .text-center;
-  padding: 0 50px 23px 50px;
-  min-height: 515px;
+  padding: 0 15px 23px 15px;
+  min-height: 400px;
   top: 50%;
   margin-top: -(515px / 2);
   border-radius: 8px;
   strong {
     color: $bright-blue;
+    text-transform: uppercase;
   }
   opacity: 1;
   transition: opacity 0.15s linear;
@@ -633,14 +663,15 @@ input[type='checkbox'].form-control {
 
 .modal-test-drive-confirm {
   @extend .text-center;
-  // margin-bottom: 15px;
   margin-top: 45px;
   margin-left: auto;
   margin-right: auto;
 }
 
 #modalTestDriveForm {
-  input[type='text'], input[type='tel'] {
+  input[type='text'],
+  input[type='tel'],
+  input[type='email'] {
     width: 100%;
   }
 }
@@ -653,10 +684,6 @@ input[type='checkbox'].form-control {
 .form-control.error, .form-check-input.error {
   box-shadow: 0 0 2px 2px red;
 }
-
-// .form-control.valid, .form-check-input.valid {
-//   box-shadow: 0 0 2px 2px green;
-// }
 
 label.error {
   @extend .sr-only;
@@ -697,7 +724,9 @@ label.error {
     .col-lg-6 {
       margin-top: 7px;
     }
-    input[type='text'], input[type='tel'] {
+    input[type='text'],
+    input[type='tel'],
+    input[type='email'] {
       width: 100%;
       padding: 10px 50px;
     }
@@ -782,4 +811,27 @@ label.error {
       padding-left: 25px;
     }
   }
+}
+
+@media screen and (max-width: 1200px) {
+  #modalTestDriveForm {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.modal-footer {
+  position: relative;
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 1px; right: 1px;
+    top: -1px;
+    background: white;
+    height: 3px;
+  }
+}
+
+.heading-sub-info a {
+  pointer-events: none;
 }

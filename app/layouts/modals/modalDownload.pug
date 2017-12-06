@@ -3,13 +3,13 @@
       .modal-dialog(role='document')
         .modal-content
           .modal-header
-            h5#ModalDownloadTitle.modal-title Заполните форму и <strong>получите бесплатно 5 полезных файлов</strong> по запуску клининговой компании в 2017-2018 году
             button.close(type='button', data-dismiss='modal', aria-label='Close')
               span.close-text Закрыть&nbsp;
               span.close-cross(aria-hidden='true') ×
           .modal-body
             .row
                 .col-md-16
+                    h5#ModalDownloadTitle.modal-title Заполните форму и <strong>получите бесплатно 5 полезных файлов</strong> по запуску клининговой компании в 2017-2018 году
                     h6.modal-list-title ФАЙЛЫ ДЛЯ СКАЧИВАНИЯ
                     ol.modal-list
                         li Презентация франшизы клининговой компании «ЭКСПЕРТ-КЛИНИНГ» (PDF)
@@ -40,12 +40,22 @@
                         h6.modal-col-bg-title Заполните форму
                         p и получите <strong>5 файлов</strong><br /> в течение <strong>3-х минут</strong>
                         
-                        form#modalDownloadForm(method='post', action='/')
+                        form#modalDownloadForm(method='POST', action=formEmail)
+                            input.d-none(type='text' name='Форма - Скачать', value='')
+                            
                             label.sr-only(for='modalDownloadName') Ваше имя
                             input#modalDownloadName.form-control(type='text',
                             placeholder='Ваше Имя',
                             value='',
-                            name='modal-download-name',
+                            name='Имя',
+                            required,
+                            aria-required='true')
+                            
+                            label.sr-only(for='modalDownloadEmail') Ваш e-mail
+                            input#modalDownloadEmail.form-control(type='email',
+                            placeholder='Ваш e-mail',
+                            value='',
+                            name='Емейл',
                             required,
                             aria-required='true')
                             
@@ -53,7 +63,7 @@
                             input#modalDownloadPhone.form-control(type='tel',
                             placeholder='+7 (___) ___-__-__',
                             value='',
-                            name='modal-download-phone',
+                            name='Телефон',
                             required,
                             aria-required='true')
                             
@@ -64,8 +74,8 @@
                                 label.form-check-label
                                     input#modalDownloadAgree.form-check-input(type='checkbox',
                                     required,
+                                    checked,
                                     aria-required='true',
-                                    value='',
-                                    name='modal-download-agree')
+                                    value='')
                                     | &nbsp; Я даю разрешение на обработку моих персональных данных,
                                     | согласно <a href="#">политике конфиденциальности</a>

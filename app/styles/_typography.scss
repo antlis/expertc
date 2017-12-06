@@ -372,6 +372,11 @@ body {
   }
 }
 
+.modal-body .modal-title strong {
+  @extend %amazing-grotesk-ultra;
+  text-transform: uppercase;
+}
+
 .modal-body-title {
   font-size: 26px;
   @extend %amazing-grotesk-demi;
@@ -414,7 +419,8 @@ body {
 }
 
 .modal-thanks .modal-title,
-.modal-order-call .modal-title {
+.modal-order-call .modal-title,
+.modal-body .modal-title {
   @extend %amazing-grotesk-ultra;
   @extend .text-center;
 }

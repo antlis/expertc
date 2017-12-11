@@ -1,6 +1,7 @@
 jQuery(function($){
    
    // hello@franshiza-klining.ru
+   // expertc@mailinator.com
    var email = '//formspree.io/hello@franshiza-klining.ru',
        $orderCallForm = $('#modalOrderCallForm'),
        $downloadForm = $('#modalDownloadForm'),
@@ -13,6 +14,15 @@ jQuery(function($){
    $('#modalDownloadPhone').mask('+7 (999) 999-9999');
    $('#modalOrderCallPhone').mask('+7 (999) 999-9999');
    $('#modalTestDrivePhone').mask('+7 (999) 999-9999');
+   
+   // Stop modal video playback after closing
+   $modalTestDrive.on('hidden.bs.modal', function(e) {
+      $('#ModalTestDrive iframe').removeAttr('src');
+      
+      setTimeout(function(e) {
+         $('#ModalTestDrive iframe').attr('src', 'https://www.youtube.com/embed/Izpm8ONchIc');
+      }, 5000);
+   });
    
    $orderCallForm.submit(function(e) {
 	e.preventDefault();

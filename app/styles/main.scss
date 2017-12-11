@@ -598,6 +598,7 @@ input[type='email'] {
   transition: opacity 0.15s linear;
   &.not-show {
     opacity: 0;
+    display: none;
   }
 }
 

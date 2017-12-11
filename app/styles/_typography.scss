@@ -318,6 +318,7 @@ body {
 
 .main-content-title {
   font-size: 30px;
+  text-transform: uppercase;
 }
 
 .btn-order-call {
@@ -326,11 +327,15 @@ body {
 }
 
 .heading-info {
-    @extend %amazing-grotesk-demi;
-    font-size: 30px;
+    @extend %amazing-grotesk-ultra;
+    font-size: 43px;
+    text-transform: uppercase;
     strong {
       @extend %amazing-grotesk-ultra;
       text-transform: uppercase;
+    }
+    .heading-info-sub {
+      font-size: 26px;
     }
 }
 

@@ -40,7 +40,21 @@
                         h6.modal-col-bg-title Заполните форму
                         p и получите <strong>5 файлов</strong><br /> в течение <strong>3-х минут</strong>
                         
-                        form#modalDownloadForm(method='POST', action=formEmail)
+                        //- From for testing, without ajax
+                        //- form#archiveSendForm(method='POST', action='/scripts/send.php', target='_blank')
+                            input#modalDownloadEmailHidden(type='email', name='userEmail')
+                            input#modalDownloadEmailHiddenFrom(type='email', name='fromEmail', value='//formspree.io/' + formEmail)
+                            input#modalDownloadUserName(type='text', name='userName', value='')
+                            button(type='submit') submit
+                        
+                        form#archiveSendForm.d-none
+                            input#modalDownloadEmailHidden(type='email', name='userEmail')
+                            input#modalDownloadEmailHiddenFrom(type='email', name='fromEmail', value=formEmail)
+                            input#modalDownloadUserName(type='text', name='userName', value='')
+                            button(type='submit') submit
+                            
+                        
+                        form#modalDownloadForm(method='POST', action='//formspree.io/' + formEmail)
                             input.d-none(type='text' name='Форма - Скачать', value='')
                             
                             label.sr-only(for='modalDownloadName') Ваше имя

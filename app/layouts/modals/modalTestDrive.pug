@@ -32,7 +32,7 @@
             .modal-footer
               h6.modal-footer-title.text-center Запишитесь на тест-драйв франшизы
               
-              form#modalTestDriveForm(method='POST', action=formEmail)
+              form#modalTestDriveForm(method='POST', action='//formspree.io/' + formEmail)
                 input.d-none(type='text' name='Форма - Заявка', value='')
                 .row
                   .col-lg-6

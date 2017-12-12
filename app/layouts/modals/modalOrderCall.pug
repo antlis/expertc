@@ -9,7 +9,7 @@
           h5#orderCallModalLabel.modal-title Заказать звонок
           p Оставьте свои контактные данные и мы перезвоним
         .modal-footer
-          form#modalOrderCallForm(method='POST', action=formEmail)
+          form#modalOrderCallForm(method='POST', action='//formspree.io/' + formEmail)
             input.d-none(type='text' name='Форма - Заказать звонок', value='')
             
             label.sr-only(for='modalOrderCallName') Ваше имя

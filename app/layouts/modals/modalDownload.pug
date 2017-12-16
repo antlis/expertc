@@ -53,14 +53,14 @@
                             button(type='submit') submit
                             
                         
-                        form#modalDownloadForm(method='POST', action='//formspree.io/' + formEmail)
+                        form#modalDownloadForm(method='POST', action='/formdownload.php')
                             input.d-none(type='text' name='Форма - Скачать', value='')
                             
                             label.sr-only(for='modalDownloadName') Ваше имя
                             input#modalDownloadName.form-control(type='text',
                             placeholder='Ваше Имя',
                             value='',
-                            name='Имя',
+                            name='downloadName',
                             required,
                             aria-required='true')
                             
@@ -68,7 +68,7 @@
                             input#modalDownloadEmail.form-control(type='email',
                             placeholder='Ваш e-mail',
                             value='',
-                            name='Емейл',
+                            name='downloadEmail',
                             required,
                             aria-required='true')
                             
@@ -76,7 +76,7 @@
                             input#modalDownloadPhone.form-control(type='tel',
                             placeholder='+7 (___) ___-__-__',
                             value='',
-                            name='Телефон',
+                            name='downloadPhone',
                             required,
                             aria-required='true')
                             

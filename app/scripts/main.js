@@ -3,7 +3,7 @@ jQuery(function ($)
 
 	// hello@franshiza-klining.ru
 	// expertc@mailinator.com
-	var email = '//formspree.io/antiantiemail@mailinator.com',
+	var email = 'hello@franshiza-klining.ru',
 		$orderCallForm = $('#modalOrderCallForm'),
 		$downloadForm = $('#modalDownloadForm'),
 		$applicationFrom = $('#modalTestDriveForm'),
@@ -33,16 +33,17 @@ jQuery(function ($)
 		e.preventDefault();
 		$.ajax(
 		{
-			url: email,
+			url: '/formcall.php',
 			method: 'POST',
 			data: $(this).serialize(),
-			dataType: 'json',
+			dataType: 'text',
 			beforeSend: function ()
 			{
-				console.log('Sending order call form...');
+				console.log( 'Sending order call form...' + $(this).serialize() );
 			},
 			success: function (data)
 			{
+				console.log('Ваше сообщение отпрвлено! Заказать звонок:' + data);
 				$modalOrderCall.modal('hide');
 				setTimeout(function ()
 				{
@@ -67,10 +68,10 @@ jQuery(function ($)
 		e.preventDefault();
 		$.ajax(
 		{
-			url: email,
+			url: '/formdownload.php',
 			method: 'POST',
 			data: $(this).serialize(),
-			dataType: 'json',
+			dataType: 'text',
 			beforeSend: function () {},
 			success: function (data)
 			{
@@ -117,10 +118,10 @@ jQuery(function ($)
 		e.preventDefault();
 		$.ajax(
 		{
-			url: email,
+			url: '/formapp.php',
 			method: 'POST',
 			data: $(this).serialize(),
-			dataType: 'json',
+			dataType: 'text',
 			beforeSend: function ()
 			{
 				console.log('Sending application form...');

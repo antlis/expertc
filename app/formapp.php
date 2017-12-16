@@ -8,10 +8,10 @@
  );
  
  $to = $visitor_email;
- $subject = "expertcleaning — Order Call Form";
- $body = "<p>User name: " . $_POST['orderCallName'] . "</p><br /><p>User phone: " . $_POST['orderCallPhone'] . "</p>";
+ $subject = "expertcleaning — Application From";
+ $body = "<p>User name: " . $_POST['appCity'] . "</p><br /><p>User email: " . $_POST['appName'] . "</p><br /><p>User phone: " . $_POST['appPhone'] . "</p>";
  if (mail($to, '=?utf-8?B?'.base64_encode($subject).'?=', $body, implode("\r\n", $headerFields))) {
- echo("<p>Сообщение отправлено!" . $_POST['orderCallName'] . "</p>");
+ echo("<p>Сообщение отправлено!" . $_POST['appCity'] . "</p>");
  } else {
  echo("<p>Сообщение не было отправлено!</p>");
  }

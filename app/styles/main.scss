@@ -10,7 +10,7 @@ body {
 
 .main-wrap {
   overflow: hidden;
-  background: url(../images/main_bg_c.jpg) no-repeat top center;
+  background: url(../images/main_bg_c.jpg) no-repeat center top;
   background-attachment: scroll;
   background-size: cover;
   z-index: 10;
@@ -114,12 +114,23 @@ body {
 
 .main-content-text {
   padding-right: 20%;
+  position: relative;
 }
 
 .main-content-info {
-  padding: 25px 0;
+  // padding: 25px 0;
   color: $dark-blue;
+  // background: $white;
+  // padding: 30px;
+  // border-radius: 8px;
 }
+
+// .btn-custom.btn-main-download:after {
+//   top: 0;
+//   right: 0;
+//   left: 0;
+//   bottom: 0;
+// }
 
 .heading-sub-info {
   margin-top: 20px;
@@ -234,7 +245,6 @@ body {
     .main-footer-top:before {
       content: " ";
       position: absolute;
-      z-index: 100;
       @extend .bg-clearning_grill;
       top: -497px;
       right: -70px;
@@ -247,7 +257,6 @@ body {
 
 .main-content-inner {
   position: relative;
-  
 }
 
 // Modal
@@ -691,7 +700,7 @@ label.error {
 }
 
 #modalOrderCallName {
-  margin-top: 2px;
+  margin-top: 5px;
 }
 // Modal
 

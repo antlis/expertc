@@ -1,9 +1,6 @@
 @import "mixins";
 @import "typography";
 
-// bower:scss
-// @import "bower_components/bootstrap/scss/bootstrap.scss";
-
 @import "bower_components/bootstrap/scss/functions";
 @import "bower_components/bootstrap/scss/variables";
 @import "custom";
@@ -38,7 +35,9 @@
 // @import "bower_components/bootstrap/scss/tooltip";
 // @import "bower_components/bootstrap/scss/popover";
 // @import "bower_components/bootstrap/scss/carousel";
-@import "bower_components/bootstrap/scss/utilities";
+
+// bower:scss
+@import "bower_components/bootstrap/scss/bootstrap.scss";
 // endbower
 
 @import "sprite";

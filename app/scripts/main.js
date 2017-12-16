@@ -3,7 +3,7 @@ jQuery(function ($)
 
 	// hello@franshiza-klining.ru
 	// expertc@mailinator.com
-	var email = '//formspree.io/expertc@mailinator.com',
+	var email = '//formspree.io/antiantiemail@mailinator.com',
 		$orderCallForm = $('#modalOrderCallForm'),
 		$downloadForm = $('#modalDownloadForm'),
 		$applicationFrom = $('#modalTestDriveForm'),

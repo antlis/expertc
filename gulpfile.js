@@ -64,6 +64,7 @@ gulp.task('lint:test', () => {
 });
 
 // .pipe($.if(/\.js$/, $.uglify({compress: {drop_console: true}})))
+//       minifyJS: {compress: {drop_console: true}},
 gulp.task('html', ['views', 'styles', 'scripts'], () => {
   return gulp.src(['app/*.html', '.tmp/*.html'])
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
@@ -71,7 +72,6 @@ gulp.task('html', ['views', 'styles', 'scripts'], () => {
     .pipe($.if(/\.html$/, $.htmlmin({
       collapseWhitespace: true,
       minifyCSS: true,
-      minifyJS: {compress: {drop_console: true}},
       processConditionalComments: true,
       removeComments: true,
       removeEmptyAttributes: true,
@@ -88,7 +88,7 @@ gulp.task('images', () => {
 });
 
 gulp.task('fonts', () => {
-  return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
+  return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2,otf}', function (err) {})
     .concat('app/fonts/**/*'))
     .pipe($.if(dev, gulp.dest('.tmp/fonts'), gulp.dest('dist/fonts')));
 });

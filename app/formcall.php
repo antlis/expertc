@@ -9,7 +9,7 @@
  );
  
  $to = $_POST['userEmail'];
- $subject = "Эксперт Клининг — Файлы по франшизе";
+ $subject = "expertcleaning — Заказать Звонок";
  $body = $archive_link;
  if (mail($to, '=?utf-8?B?'.base64_encode($subject).'?=', $body, implode("\r\n", $headerFields))) {
  echo("<p>Сообщение отправлено!</p>");

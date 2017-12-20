@@ -10,10 +10,11 @@
  
  $to = $_POST['userEmail'];
  $subject = "Эксперт Клининг — Файлы по франшизе";
+ $subject_encode = '=?utf-8?B?'.base64_encode($subject).'?=';
  $body = $archive_link;
- if (mail($to, '=?utf-8?B?'.base64_encode($subject).'?=', $body, implode("\r\n", $headerFields))) {
+ if (mail($to, $subject_encode, $body, implode("\r\n", $headerFields))) {
  echo("<p>Сообщение отправлено!</p>");
  } else {
  echo("<p>Сообщение не было отправлено!</p>");
  }
- ?>
+?>

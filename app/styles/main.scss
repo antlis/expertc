@@ -478,8 +478,6 @@ input[type='email'] {
 }
 
 .modal-col-bg .modal1-confirm {
-  font-size: 11px;
-  @extend %roboto-medium;
   margin: 30px auto 0 auto;
   width: 80%;
 }
@@ -534,8 +532,6 @@ input[type='email'] {
 }
 
 #ModalDownloadTitle {
-  font-size: 30px !important;
-  @extend %amazing-grotesk-demi;
   padding: 0 20px;
   margin-top: 25px;
   strong {
@@ -579,10 +575,6 @@ input[type='email'] {
     p {
       margin-bottom: 0;
     }
-  }
-  .modal-title {
-    @extend %amazing-grotesk-ultra;
-    font-size: 21px;
   }
 }
 

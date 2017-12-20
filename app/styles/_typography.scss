@@ -510,3 +510,13 @@ body {
   font-family: 'Open Sans';
   font-weight: 600;
 }
+
+.modal-col-bg .modal1-confirm {
+    font-size: 11px;
+    @extend %roboto-medium;
+}
+
+#ModalDownloadTitle {
+    font-size: 30px;
+    @extend %amazing-grotesk-demi;
+}
